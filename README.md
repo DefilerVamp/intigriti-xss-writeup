@@ -21,12 +21,12 @@ The issue allows execution of arbitrary JavaScript in a victim’s browser, lead
 
 ---
 
-## 🎯 Target
+##  Target
 https://challenge-0426.intigriti.io
 
 ---
 
-## ⚙️ Root Cause
+##  Root Cause
 
 The application constructs a manifest URL as:
 
@@ -75,8 +75,11 @@ Execution flow:
 s.textContent = el.dataset.cfg;
 document.head.appendChild(s);
 ```
+---
 
 ### Proof of Concept
+
+---
 
 Step 1: Store malicious preset
 
@@ -105,20 +108,27 @@ POST /api/notes
 Step 3: Send victim link
 /note/NOTE_ID/..%2F..%2Fapi%2Faccount%2Fpreferences%2Freader-presets%2Fevil
 
-
+---
 ### Impact
+---
+
 Stored XSS triggered via crafted URL
 Session hijacking
 No authentication required for preset access
 Minimal user interaction required
 
+---
 ### Mitigation
+---
+
 Encode panel using encodeURIComponent
 Restrict preset endpoints to authenticated users only
 Harden DOMPurify configuration
 Avoid executing scripts from user-controlled attributes
-🏁 Conclusion
 
+---
+### Conclusion
+---
 This vulnerability highlights how chaining:
 
 Input validation flaws
