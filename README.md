@@ -136,4 +136,4 @@ Input validation flaws
 Access control weaknesses
 Client-side misconfigurations
 
-can lead to high-impact exploitation.  
+can lead to high-impact exploitation.   
